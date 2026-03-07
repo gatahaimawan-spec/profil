@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', Sans-Serif;
-
+    font-family: "Poppins", Sans-Serif;
 }
 
 body {
@@ -23,7 +22,8 @@ body {
 
 .navbar ul {
     display: flex;
-    list-style: none; /* Biar titik bullet ilang */
+    list-style: none;
+    /* Biar titik bullet ilang */
 }
 
 .navbar ul li {
@@ -36,7 +36,8 @@ body {
     text-decoration: none;
     color: #000;
     transition: 0.5s;
-    position: relative; /* Wajib ada buat patokan garis */
+    position: relative;
+    /* Wajib ada buat patokan garis */
     padding-bottom: 5px;
 }
 
@@ -45,12 +46,14 @@ body {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 0; /* Awalnya 0 biar ga keliatan */
+    left: 50%;
+    width: 0;
+    /* Awalnya 0 biar ga keliatan */
     height: 2px;
     background-color: rgb(236, 193, 22);
     transition: 0.5s;
-    transform: translateX(-50%); /* Biar nengah */
+    transform: translateX(-50%);
+    /* Biar nengah */
 }
 
 /* 2. Hover: Teks berubah warna */
@@ -66,7 +69,8 @@ body {
 .navbar h2 {
     color: black;
     font-weight: bold;
-    font-size: 1.7rem; /* Pake titik (.) bukan koma (,) */
+    font-size: 1.7rem;
+    /* Pake titik (.) bukan koma (,) */
 }
 
 .main-area {
@@ -74,16 +78,15 @@ body {
     background-color: rgb(239, 243, 243);
     height: auto;
     justify-content: space-evenly;
-    border-top: 2px solid rgb(225, 228, 228) ;
-    border-bottom: 2px solid rgb(225, 228, 228) ;
-    
+    border-top: 2px solid rgb(225, 228, 228);
+    border-bottom: 2px solid rgb(225, 228, 228);
 }
-.hero-warpper{
+
+.hero-warpper {
     display: flex;
     padding-top: 70px;
     padding-bottom: 40px;
     gap: 30px;
-
 }
 
 .main-area img {
@@ -91,22 +94,19 @@ body {
     width: 200px;
     border-radius: 50%;
     object-fit: cover;
-
 }
 
 .text-intro {
     color: #000;
-
 }
+
 .home-btn {
     transition: 0.3s;
 }
 
 .nama {
     color: rgb(236, 193, 22);
-
 }
-
 
 #lihat {
     background-color: rgb(255, 255, 255);
@@ -129,17 +129,57 @@ body {
     border: none;
     border-radius: 18px;
     font-weight: bold;
-     border: 2px solid #000;
-     transition: 0.3s;
+    border: 2px solid #000;
+    transition: 0.3s;
 }
+
 #lihat:hover {
-    background-color: rgb(236, 193, 22) ;
+    background-color: rgb(236, 193, 22);
     color: white;
     transition: 0.3s;
+}
+
+#hubungisaya:hover {
+    background-color: rgb(236, 193, 22);
+    color: white;
+    transition: 0.3s;
+}
+
+.tentang-saya {
+    
+
+    flex-direction: column;
+    height: auto;
+    margin: 0 20%;
+    position: relative;
+}
+
+.isi-tentangsaya {
+    display: flex;
+    
+}
+
+.isi-tentangsaya h3 {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: start;
+}
+
+.isi-tentangsaya p {
+    font-weight: 500;
+}
+
+.proyek {
+    display: flex;
+    height: auto;
 
 }
-#hubungisaya:hover {
-    background-color: rgb(236, 193, 22) ;
-    color: white;
-    transition: 0.3s;
+
+.isi-proyek h3 {
+    text-align: start;
+
+
+
+
 }
