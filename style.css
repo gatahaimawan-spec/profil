@@ -13,17 +13,16 @@ body {
 }
 
 .navbar {
-    background-color: rgb(255, 255, 255);
     display: flex;
-    justify-content: space-evenly;
-    padding: 15px 0px;
+    justify-content: space-between;
     align-items: center;
-    margin: 0 20px;
+    margin: 0 20%;
 }
 
 .navbar ul {
     display: flex;
     list-style: none;
+
     /* Biar titik bullet ilang */
 }
 
@@ -85,7 +84,7 @@ body {
 
 .hero-warpper {
     display: flex;
-    padding-top: 70px;
+    padding-top: 2%;
     padding-bottom: 40px;
     gap: 30px;
 }
@@ -147,7 +146,7 @@ body {
 }
 
 .tentang-saya {
-    
+
 
     flex-direction: column;
     height: auto;
@@ -157,7 +156,8 @@ body {
 
 .isi-tentangsaya {
     display: flex;
-    
+
+
 }
 
 .isi-tentangsaya h3 {
@@ -180,7 +180,82 @@ body {
 .isi-proyek h3 {
     text-align: start;
 
+}
+
+.container-proyek {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
+
+.card-1 {
+    background-color: rgb(250, 247, 247);
+    display: flex;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid gainsboro;
+    flex-direction: column;
+}
+
+.card-1 img {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+
+}
 
 
 
+.card-2 {
+    background-color: rgb(250, 247, 247);
+    display: flex;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid gainsboro;
+    flex-direction: column;
+}
+
+.card-2 img {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+   width: 300px;
+    height: 68%;
+    object-fit: cover;
+}
+
+.text {
+    padding: 5px 10px;
+}
+.card-3 {
+    background-color: rgb(250, 247, 247);
+    display: flex;
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid gainsboro;
+    flex-direction: column;
+}
+
+.card-3 img {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+   width: 300px;
+    height: 70%;
+    object-fit: cover;
+}
+
+.text {
+    padding: 5px 10px;
 }
