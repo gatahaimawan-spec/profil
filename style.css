@@ -1,261 +1,349 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", Sans-Serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth; /* Membuat animasi saat menu diklik menjadi halus */
 }
 
 body {
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
 }
 
+/* ================= NAVBAR ================= */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 20%;
-}
-
-.navbar ul {
-    display: flex;
-    list-style: none;
-
-    /* Biar titik bullet ilang */
-}
-
-.navbar ul li {
-    margin: 0 10px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #000;
-    transition: 0.5s;
-    position: relative;
-    /* Wajib ada buat patokan garis */
-    padding-bottom: 5px;
-}
-
-/* 1. Definisi Garis (Kondisi Diam) */
-.navbar ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    /* Awalnya 0 biar ga keliatan */
-    height: 2px;
-    background-color: rgb(236, 193, 22);
-    transition: 0.5s;
-    transform: translateX(-50%);
-    /* Biar nengah */
-}
-
-/* 2. Hover: Teks berubah warna */
-.navbar ul li a:hover {
-    color: rgb(236, 193, 22);
-}
-
-/* 3. Hover: Garis ngelebar jadi 100% */
-.navbar ul li a:hover::after {
-    width: 100%;
+  background-color: rgb(246, 250, 250);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 10%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .navbar h2 {
-    color: black;
-    font-weight: bold;
-    font-size: 1.7rem;
-    /* Pake titik (.) bukan koma (,) */
+  color: black;
+  font-size: 1.5rem;
 }
 
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: rgb(236, 193, 22);
+}
+
+#menu {
+  display: none; /* Disembunyikan saat di Laptop */
+  color: #000;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+/* ================= HOME / HERO ================= */
 .main-area {
-    display: flex;
-    background-color: rgb(239, 243, 243);
-    height: auto;
-    justify-content: space-evenly;
-    border-top: 2px solid rgb(225, 228, 228);
-    border-bottom: 2px solid rgb(225, 228, 228);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(239, 243, 243);
+  padding: 150px 10% 80px; /* Jarak atas disesuaikan karena ada navbar */
+  min-height: 100vh;
 }
 
 .hero-warpper {
-    display: flex;
-    padding-top: 2%;
-    padding-bottom: 40px;
-    gap: 30px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
 }
 
 .main-area img {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    object-fit: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.text-intro {
-    color: #000;
-}
-
-.home-btn {
-    transition: 0.3s;
+.text-intro h1 {
+  font-size: 2rem;
 }
 
 .nama {
-    color: rgb(236, 193, 22);
+  color: rgb(236, 193, 22);
+  margin-bottom: 10px;
 }
 
-#lihat {
-    background-color: rgb(255, 255, 255);
-    padding: 6px 23px;
-    margin-top: 10px;
-    font-size: 12px;
-    border: none;
-    border-radius: 18px;
-    font-weight: bold;
-    border: 2px solid #000;
-    transition: 0.3s;
+.home-btn ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin-top: 20px;
 }
 
-#hubungisaya {
-    background-color: rgb(255, 255, 255);
-    padding: 6px 18px;
-    margin-left: 5px;
-    margin-top: 10px;
-    font-size: 12px;
-    border: none;
-    border-radius: 18px;
-    font-weight: bold;
-    border: 2px solid #000;
-    transition: 0.3s;
+.home-btn button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #000;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-#lihat:hover {
-    background-color: rgb(236, 193, 22);
-    color: white;
-    transition: 0.3s;
+.home-btn button:hover {
+  background-color: rgb(236, 193, 22);
+  border-color: rgb(236, 193, 22);
+  color: white;
 }
 
-#hubungisaya:hover {
-    background-color: rgb(236, 193, 22);
-    color: white;
-    transition: 0.3s;
-}
-
+/* ================= TENTANG SAYA ================= */
 .tentang-saya {
-
-
-    flex-direction: column;
-    height: auto;
-    margin: 0 20%;
-    position: relative;
-}
-
-.isi-tentangsaya {
-    display: flex;
-
-
+  padding: 80px 10%;
+  background-color: #fff;
 }
 
 .isi-tentangsaya h3 {
-    font-size: 1.5rem;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    text-align: start;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .isi-tentangsaya p {
-    font-weight: 500;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: justify;
 }
 
-.proyek {
-    display: flex;
-    height: auto;
-
+/* ================= PROYEK ================= */
+.proyek-section {
+  padding: 80px 10%;
+  background-color: rgb(239, 243, 243);
 }
 
 .isi-proyek h3 {
-    text-align: start;
-
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .container-proyek {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+}
+
+.card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.text {
+  padding: 15px;
+}
+
+/* ================= KEAHLIAN & KONTAK ================= */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+  background-color: #fff;
+  align-items: flex-start;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.keahlian-section {
+  flex: 1.5;
+}
+
+.keahlian-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.keahlian-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 60px;
+}
+
+.keahlian-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.progress-container {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #e67e22;
+  border-radius: 10px;
+}
+
+/* ================= FORM KONTAK ================= */
+.boxkontak {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.kontak-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-input:focus {
+  border-color: rgb(236, 193, 22);
+}
+
+.btn-kirim {
+  background-color: #1a2a3a;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-kirim:hover {
+  background-color: rgb(236, 193, 22);
+}
+
+/* ================= COPYRIGHT ================= */
+.copyright {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a2a3a;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* =======================================================
+   MEDIA QUERY (RESPONSIF UNTUK LAYAR HP & TABLET)
+   ======================================================= */
+
+@media screen and (max-width: 768px) {
+  .navbar ul {
+    position: absolute;
+    /* Gunakan -1000px agar yakin benar-benar di luar layar */
+    top: -1000px; 
+    left: 0;
     width: 100%;
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    
-}
-
-.card-1 {
-    background-color: rgb(250, 247, 247);
-    display: flex;
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    border: 2px solid gainsboro;
     flex-direction: column;
-}
+    background-color: rgb(246, 250, 250);
+    text-align: center;
+    padding: 20px 0;
+    /* Efek transisi agar tarikannya halus */
+    transition: all 0.5s ease-in-out; 
+    z-index: -1;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
 
-.card-1 img {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-    width: 300px;
-    height: 100%;
-    object-fit: cover;
-
-}
+  /* Saat diklik (Active), menu muncul tepat di bawah navbar */
+  .navbar ul.active {
+    top: 60px; /* Sesuaikan dengan tinggi navbarmu */
+  }
 
 
+  #menu {
+    display: block; /* Munculkan ikon hamburger */
+  }
 
-.card-2 {
-    background-color: rgb(250, 247, 247);
-    display: flex;
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    border: 2px solid gainsboro;
+
+  /* Hero / Foto Profil turun ke atas teks */
+  .main-area {
+    padding-top: 250px; /* Tambah ruang karena navbar membesar */
+  }
+  
+  .hero-warpper {
     flex-direction: column;
-}
+    text-align: center;
+  }
 
-.card-2 img {
+  .home-btn ul {
     justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-   width: 300px;
-    height: 68%;
-    object-fit: cover;
-}
+  }
 
-.text {
-    padding: 5px 10px;
-}
-.card-3 {
-    background-color: rgb(250, 247, 247);
-    display: flex;
-    width: auto;
-    height: auto;
-    border-radius: 20px;
-    border: 2px solid gainsboro;
+  /* Keahlian & Kontak menumpuk dari atas ke bawah */
+  .footer-wrapper {
     flex-direction: column;
-}
+    padding: 40px 5%;
+    gap: 50px;
+  }
 
-.card-3 img {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-radius: 20px;
-   width: 300px;
-    height: 70%;
-    object-fit: cover;
-}
+  .boxkontak {
+    width: 100%;
+  }
 
-.text {
-    padding: 5px 10px;
+  .input-row {
+    flex-direction: column;
+  }
 }
